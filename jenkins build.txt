@@ -1,0 +1,112 @@
+Started by user Vinay Aher
+Checking out git git@github.com:vinayahercsa/ACAMSFull.git into /var/lib/jenkins/workspace/AcamsFull_Feature_validation@script/bcd113bb43aaefa8119fc80c77ac5c4917cbf8e871544bd30e3439a0f5b0c2c5 to read Jenkinsfile
+The recommended git tool is: NONE
+using credential Vinay
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/AcamsFull_Feature_validation@script/bcd113bb43aaefa8119fc80c77ac5c4917cbf8e871544bd30e3439a0f5b0c2c5/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vinayahercsa/ACAMSFull.git # timeout=10
+Fetching upstream changes from git@github.com:vinayahercsa/ACAMSFull.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_SSH to set credentials for deployment 
+Verifying host key using known hosts file
+ > git fetch --tags --force --progress -- git@github.com:vinayahercsa/ACAMSFull.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/feature/validation^{commit} # timeout=10
+Checking out Revision cf174dc80451bea920e7e498e7c4fa514aa27c17 (refs/remotes/origin/feature/validation)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cf174dc80451bea920e7e498e7c4fa514aa27c17 # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk cf174dc80451bea920e7e498e7c4fa514aa27c17 # timeout=10
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/AcamsFull_Feature_validation
+[Pipeline] {
+[Pipeline] tool
+[sfdx] $ sh -e /var/lib/jenkins/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/sfdx/hudson2114052798569535813.sh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 98 66.9M   98 65.9M    0     0  69.6M      0 --:--:-- --:--:-- --:--:-- 69.6M
+100 66.9M  100 66.9M    0     0  69.9M      0 --:--:-- --:--:-- --:--:-- 69.8M
+[Pipeline] tool
+[Pipeline] tool
+[Pipeline] stage
+[Pipeline] { (checkout source)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential Vinay
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/AcamsFull_Feature_validation/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url git@github.com:vinayahercsa/ACAMSFull.git # timeout=10
+Fetching upstream changes from git@github.com:vinayahercsa/ACAMSFull.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_SSH to set credentials for deployment 
+Verifying host key using known hosts file
+ > git fetch --tags --force --progress -- git@github.com:vinayahercsa/ACAMSFull.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/feature/validation^{commit} # timeout=10
+Checking out Revision cf174dc80451bea920e7e498e7c4fa514aa27c17 (refs/remotes/origin/feature/validation)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cf174dc80451bea920e7e498e7c4fa514aa27c17 # timeout=10
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withCredentials
+Masking supported pattern matches of $jwt_key_file
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Deploye Code)
+[Pipeline] isUnix
+[Pipeline] sh
+Warning: A secret was passed to "sh" using Groovy String interpolation, which is insecure.
+		 Affected argument(s) used the following variable(s): [jwt_key_file]
+		 See https://jenkins.io/redirect/groovy-string-interpolation for details.
++ /var/lib/jenkins/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/sfdx/sfdx/bin/sfdx force:auth:jwt:grant --clientid 3MVG9BJjUUIJZf1xAQJMjfDTKr2FYLU3hyEx9ObFmZLgZjJG_pRhSO4aPi6xFdY1TbIV.74LlsnPXUjsWIkf4 --jwtkeyfile **** --username vinay.aher@cloudsynapps.com.acamsfull --instanceurl https://test.salesforce.com --setdefaultdevhubusername
+Warning: The "--clientid" flag has been deprecated. Use "--client-id | -i" instead.
+Warning: The "--jwtkeyfile" flag has been deprecated. Use "--jwt-key-file | -f" instead.
+Warning: The "--instanceurl" flag has been deprecated. Use "--instance-url | -r" instead.
+Warning: The "--setdefaultdevhub" flag has been deprecated. Use "--set-default-dev-hub | -d" instead.
+Warning: The "--setdefaultdevhubusername" flag has been deprecated. Use "--set-default-dev-hub | -d" instead.
+Successfully authorized vinay.aher@cloudsynapps.com.acamsfull with org ID 00D7g0000005hQ8EAI
+[Pipeline] echo
+0
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] isUnix
+[Pipeline] sh
++ ls -la
+total 84
+drwxr-xr-x 11 jenkins jenkins 4096 Apr 17 11:53 .
+drwxr-xr-x 48 jenkins jenkins 4096 Apr 12 12:28 ..
+-rw-r--r--  1 jenkins jenkins  269 Apr 12 12:28 .eslintignore
+-rw-r--r--  1 jenkins jenkins  349 Apr 12 12:28 .forceignore
+drwxr-xr-x  8 jenkins jenkins 4096 Apr 17 12:28 .git
+-rw-r--r--  1 jenkins jenkins  729 Apr 12 12:28 .gitignore
+drwxr-xr-x  2 jenkins jenkins 4096 Apr 12 12:28 .husky
+-rw-r--r--  1 jenkins jenkins  196 Apr 12 12:28 .prettierignore
+-rw-r--r--  1 jenkins jenkins  228 Apr 12 12:28 .prettierrc
+drwxr-xr-x  2 jenkins jenkins 4096 Apr 12 12:28 .sf
+drwxr-xr-x  2 jenkins jenkins 4096 Apr 12 12:28 .sfdx
+drwxr-xr-x  2 jenkins jenkins 4096 Apr 12 12:28 .vscode
+-rw-r--r--  1 jenkins jenkins 2072 Apr 17 11:53 Jenkinsfile
+-rw-r--r--  1 jenkins jenkins 1251 Apr 12 12:28 README.md
+drwxr-xr-x  2 jenkins jenkins 4096 Apr 12 12:28 config
+drwxr-xr-x  3 jenkins jenkins 4096 Apr 12 12:28 force-app
+-rw-r--r--  1 jenkins jenkins  170 Apr 12 12:28 jest.config.js
+drwxr-xr-x  2 jenkins jenkins 4096 Apr 17 11:34 manifest
+-rw-r--r--  1 jenkins jenkins 1386 Apr 12 12:28 package.json
+drwxr-xr-x  4 jenkins jenkins 4096 Apr 12 12:28 scripts
+-rw-r--r--  1 jenkins jenkins  224 Apr 12 12:28 sfdx-project.json
+[Pipeline] sh
++ /var/lib/jenkins/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/sfdx/sfdx/bin/sfdx force:source:deploy --checkonly -u vinay.aher@cloudsynapps.com.acamsfull -x manifest/package.xml
+Warning: We plan to deprecate this command in the future. Try using the "project deploy start" command instead.
+Warning: The "-u" flag has been deprecated. Use "--target-org | -o" instead.
+Error (1): fast_xml_parser_1.XMLParser is not a constructor
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+Finished: FAILURE
